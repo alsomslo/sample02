@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;700;900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+@import url('https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:800&display=swap');
+
+
+
+
+/* @font-face {
+    font-family: "IvyMode";
+    font-style: normal;
+    font-weight: 200;
+    src: local(※),
+        url(../font/IvyMode-Thin/IvyMode-Thin.eot) format("embedded-opentype"),
+        url(../font/IvyMode-Thin/IvyMode-Thin.woff) format("woff"),
+        url(../font/IvyMode-Thin/IvyMode-Thin.woff2) format("woff2")
+}
+
+@font-face {
+    font-family: "IvyMode";
+    font-style: normal;
+    font-weight: 300;
+    src: local(※),
+        url(../font/IvyMode-Light/IvyMode-Light.eot) format("embedded-opentype"),
+        url(../font/IvyMode-Light/IvyMode-Light.woff) format("woff"),
+        url(../font/IvyMode-Light/IvyMode-Light.woff2) format("woff2")
+}
+
+
+
+@font-face {
+    font-family: "IvyMode";
+    font-style: normal;
+    font-weight: 400;
+    src: local(※),
+        url(../font/IvyMode-Regular/IvyMode-Regular.eot) format("embedded-opentype"),
+        url(../font/IvyMode-Regular/IvyMode-Regular.woff) format("woff"),
+        url(../font/IvyMode-Regular/IvyMode-Regular.woff2) format("woff2")
+}
+
+@font-face {
+    font-family: "IvyMode";
+    font-style: normal;
+    font-weight: 500;
+    src: local(※),
+        url(../font/IvyMode-SemiBold/IvyMode-SemiBold.eot) format("embedded-opentype"),
+        url(../font/IvyMode-SemiBold/IvyMode-SemiBold.woff) format("woff"),
+        url(../font/IvyMode-SemiBold/IvyMode-SemiBold.woff2) format("woff2")
+} */
+
+
+
+.roll {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 500px;
+    height: 500px;
+    background: #ddd;
+}
+
+.roll span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+
+
+body {
+
+    font-family: 'IvyMode', 'Roboto', 'Noto Sans KR', sans-serif;
+    color: #000;
+    /* background: #f9f9f9; */
+}
+
+
+
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+
+
+.sec {
+    padding: 100px 0;
+}
+
+.sec .tit {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.dbg {
+    background: #f9f9f9;
+}
