@@ -20,92 +20,191 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/5.0.0/imagesloaded.pkgd.min.js'></script> -->
     <script src='https://assets.codepen.io/16327/ScrollSmoother.min.js'></script>
     <script src=' https://assets.codepen.io/16327/SplitText3.min.js'></script>
-
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/5.0.0/imagesloaded.pkgd.min.js'></script>
 
     <!-- /gsap -->
     <script src="./js/jquery.min.js"></script>
     <script type="module" src="./js/custom.js"></script>
     <script src="./js/main_text_animation.js"></script>
 </head>
-<div class="wrap">
-    <main id="parallax__cont">
-        <div class="container">
-            <h1 id="text-anim">2023 PORTFOLOWEBSITE</h1>
-        </div>
 
-        <section id="section1" class="parallax__item">
-
-            <div class="parallax__item__img">
-
-            </div>
-
-
-
-            <div class="text">
-                <h2>Macaroon croissant pastry shortbread cupcake chupa chups pudding. Gummies pie candy
-                    canes sweet
-                    roll
-
-                </h2>
-
-            </div>
-        </section>
-
-
-    </main>
-
-    <section class="section2">
-        <div class="slide_wrap">
-            <div class="slide01">
-                <img src="./images/01hero.jpg" alt="">
-            </div>
-            <div class="slide01">
-                <img src="./images/02hero.jpg" alt="">
-            </div>
-            <div class="slide01">
-                <img src="./images/03hero.jpg" alt="">
-            </div>
-        </div>
-
-
-    </section>
-
-
-    <section class="section3">
-
-
-    </section>
-</div>
-
-
-
-
-
-
-
-
-
-<script>
-    const section1 = gsap.timeline();
-    section1.to("#section1 .parallax__item__img", { scale: 2.5 })
-        .to("#section1 .parallax__item__img", { autoAlpha: 0 })
-
-    ScrollTrigger.create({
-        animation: section1,
-        trigger: "#section1",
-        start: "top top",
-        end: "+=1000",
-        scrub: true,
-        pin: true,
-        markers: false,
-        anticipatePin: 1
-    });
-
-</script>
-</div>
 
 <body>
+    <div class="wrap">
+        <div class="animation">
+            <p class="loading">Loading...</p>
+        </div>
+        <main>
 
+            <div class="lolol">
+                병신
+            </div>
+            <div id="parallax__cont">
+                <div class="container">
+                    <h1 id="text-anim">2023 PORTFOLOWEBSITE</h1>
+                </div>
+
+                <section id="section1" class="parallax__item">
+
+                    <div class="parallax__item__img">
+
+                    </div>
+
+
+
+                    <div class="text">
+                        <h2>Macaroon croissant pastry shortbread cupcake chupa chups pudding. Gummies pie candy
+                            canes sweet
+                            roll
+
+                        </h2>
+
+                    </div>
+                </section>
+
+
+            </div>
+
+            <section class="section2">
+                <div class="placeholder"></div>
+                <section class="slide-container">
+                    <div class="slide slide-1">
+                        <div class="text">
+                            <span class="number">1</span>
+                            <h3 class="heading">Rubrik</h3>
+                            <p class="paragraph">Llam pulvinar sapienma onec sque porta quamut vel egestas. Puruscra
+                                metusves
+                                lum cras lobortis aenean necmae que. Egestasm curabitu in nunccras auctorpr tique
+                                cursusp.
+                                Dum
+                                laoreet nam metusqui potenti sim llus rhoncusv lectus miproin. Turpis varius nean risque
+                                congued
+                                fringi.</p>
+                        </div>
+                        <figure class="figure">
+                            <img src="https://images.unsplash.com/photo-1633978794508-de2c9e647d79?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80"
+                                alt="" />
+                        </figure>
+                    </div>
+                    <div class="slide">
+                        <div class="text">
+                            <span class="number">2</span>
+                            <h3 class="heading">Rubrik</h3>
+                            <p class="paragraph">Llam pulvinar sapienma onec sque porta quamut vel egestas. Puruscra
+                                metusves
+                                lum cras lobortis aenean necmae que. Egestasm curabitu in nunccras auctorpr tique
+                                cursusp.
+                                Dum
+                                laoreet nam metusqui potenti sim llus rhoncusv lectus miproin. Turpis varius nean risque
+                                congued
+                                fringi.</p>
+                        </div>
+                        <figure class="figure">
+                            <img src="https://images.unsplash.com/photo-1634001441830-db7b7bf5ca16?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80"
+                                alt="" />
+                        </figure>
+                    </div>
+                    <div class="slide">
+                        <div class="text">
+                            <span class="number">3</span>
+                            <h3 class="heading">Rubrik</h3>
+                            <p class="paragraph">Llam pulvinar sapienma onec sque porta quamut vel egestas. Puruscra
+                                metusves
+                                lum cras lobortis aenean necmae que. Egestasm curabitu in nunccras auctorpr tique
+                                cursusp.
+                                Dum
+                                laoreet nam metusqui potenti sim llus rhoncusv lectus miproin. Turpis varius nean risque
+                                congued
+                                fringi.</p>
+                        </div>
+                        <figure class="figure">
+                            <img src="https://images.unsplash.com/photo-1633969894076-1bc02f5b0a87?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=872&q=80"
+                                alt="" />
+                        </figure>
+                    </div>
+                    <div class="slide">
+                        <div class="text">
+                            <span class="number">4</span>
+                            <h3 class="heading">Rubrik</h3>
+                            <p class="paragraph">Llam pulvinar sapienma onec sque porta quamut vel egestas. Puruscra
+                                metusves
+                                lum cras lobortis aenean necmae que. Egestasm curabitu in nunccras auctorpr tique
+                                cursusp.
+                                Dum
+                                laoreet nam metusqui potenti sim llus rhoncusv lectus miproin. Turpis varius nean risque
+                                congued
+                                fringi.</p>
+                        </div>
+                        <figure class="figure">
+                            <img src="https://images.unsplash.com/photo-1633983482450-bfb7b566fe6a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80"
+                                alt="" />
+                        </figure>
+                    </div>
+                    <div class="slide">
+                        <div class="text">
+                            <span class="number">5</span>
+                            <h3 class="heading">Rubrik</h3>
+                            <p class="paragraph">Llam pulvinar sapienma onec sque porta quamut vel egestas. Puruscra
+                                metusves
+                                lum cras lobortis aenean necmae que. Egestasm curabitu in nunccras auctorpr tique
+                                cursusp.
+                                Dum
+                                laoreet nam metusqui potenti sim llus rhoncusv lectus miproin. Turpis varius nean risque
+                                congued
+                                fringi.</p>
+                        </div>
+                        <figure class="figure">
+                            <img src="https://images.unsplash.com/photo-1633986171706-68a85441bc1c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80"
+                                alt="" />
+                        </figure>
+                    </div>
+                </section>
+
+                <div class="placeholder"></div>
+                <div class="placeholder"></div>
+                <div class="placeholder"></div>
+                <div class="placeholder"></div>
+                <div class="placeholder"></div>
+                <div class="placeholder"></div>
+
+
+            </section>
+
+
+            <section class="section3">
+
+
+            </section>
+        </main>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script>
+        const section1 = gsap.timeline();
+        section1.to("#section1 .parallax__item__img", { scale: 2.5 })
+            .to("#section1 .parallax__item__img", { autoAlpha: 0 })
+
+        ScrollTrigger.create({
+            animation: section1,
+            trigger: "#section1",
+            start: "top top",
+            end: "+=1000",
+            scrub: true,
+            pin: true,
+            markers: false,
+            anticipatePin: 1
+        });
+
+    </script>
+    </div>
 </body>
 
 </html>

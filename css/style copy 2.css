@@ -1,0 +1,196 @@
+html {
+    overflow-x: hidden;
+    background-color: #000;
+}
+
+body {
+    margin: 0;
+    font-family: "Open Sans";
+
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    max-width: 100%;
+    height: 600px;
+
+}
+
+h1 {
+    color: #fff;
+    font-size: 6vw;
+    max-width: 50%;
+}
+
+h1 div {
+    display: inline-block;
+}
+
+
+
+/* gsap */
+
+
+
+/* parallax__cont */
+#parallax__title {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    z-index: 1000;
+}
+
+#parallax__title h1 {
+    font-size: 30px;
+    border-bottom: 1px dashed #fff;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    font-weight: 400;
+    display: inline-block;
+}
+
+#parallax__title p {
+    font-size: 16px;
+}
+
+#parallax__title ul {
+    margin-top: 10px;
+}
+
+#parallax__title li {
+    display: inline;
+}
+
+#parallax__title li a {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px dashed #fff;
+    display: inline-block;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+}
+
+#parallax__title li.active a {
+    background: #fff;
+    color: #000;
+}
+
+
+#parallax__cont {
+    position: relative;
+
+}
+
+.parallax__item {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+
+.parallax__item__num {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    font-size: 5vw;
+    line-height: 1;
+}
+
+.parallax__item__img {
+    width: 10vw;
+    height: 10vw;
+    margin: 1vw;
+    background-color: #fff;
+    background-size: cover;
+    background-position: center;
+}
+
+#section1 {
+    top: 70%;
+    background-color: #000;
+}
+
+#section1 .parallax__item__img {
+    background-image: url(../images/00hero.jpg);
+
+}
+
+/* option */
+
+
+
+#section1 .parallax__item__img {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+
+}
+
+.text {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    max-width: 90vw;
+    width: 100%;
+    transform: translate(-50%, -150px);
+    color: #fff;
+    font-size: 50px;
+
+}
+
+
+
+
+.text>h2 {
+
+    margin: auto;
+    line-height: 1.2;
+    font-size: 60px;
+    color: #fff;
+
+
+}
+
+.text {
+    padding: 10vh 0;
+}
+
+.mask {
+    width: 100%;
+    height: 105%;
+    position: absolute;
+    color: gold;
+    background: #000;
+
+    left: 0;
+    top: 0;
+    opacity: 0.8;
+}
+
+
+
+/* .section2 {
+    height: 100vh;
+
+    color: skyblue;
+}
+
+.slide_wrap {
+    display: flex;
+    justify-content: space-around;
+}
+
+.slide_wrap img {
+    height: 600px;
+    width: 500px;
+    object-fit: cover;
+} */
