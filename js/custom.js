@@ -29,7 +29,7 @@ gsap.config({ trialWarn: false });
 console.clear();
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
 let smoother = ScrollSmoother.create({
-    smooth: 1
+    smooth: 7
 });
 
 
