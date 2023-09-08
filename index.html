@@ -18,12 +18,13 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/Flip.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/5.0.0/imagesloaded.pkgd.min.js'></script> -->
-    <script src='https://assets.codepen.io/16327/ScrollSmoother.min.js'></script>
+    <!-- <script src='https://assets.codepen.io/16327/ScrollSmoother.min.js'></script> -->
     <!-- <script src=' https://assets.codepen.io/16327/SplitText3.min.js'></script> -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/5.0.0/imagesloaded.pkgd.min.js'></script>
+    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/5.0.0/imagesloaded.pkgd.min.js'></script> -->
 
     <!-- /gsap -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
     <script src="./js/jquery.min.js"></script>
     <script type="module" src="./js/custom.js"></script>
     <script src="./js/main_text_animation.js"></script>
@@ -60,13 +61,13 @@
                         roll
                     </h2>
                 </div>
-                <!-- 
+
                 <section id="pin_01" class="parallax__item">
 
                     <div class="parallax__item__text t1">section5</div>
                     <div class="parallax__item__text t2">section5</div>
 
-                </section> -->
+                </section>
             </div>
 
 
@@ -194,7 +195,7 @@
     <script>
         const section1 = gsap.timeline();
         section1.to("#section1 .parallax__item__img", { scale: 2.5 })
-            .to("#section1 .parallax__item__img", { autoAlpha: 0 })
+            .to("#section1 .parallax__item__img", { autoAlpha: 0.5 })
 
         ScrollTrigger.create({
             animation: section1,

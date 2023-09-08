@@ -1,3 +1,17 @@
+const lenis = new Lenis();
+
+lenis.on('scroll', (e) => {
+    console.log(e);
+})
+
+function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
+
 const tl = gsap.timeline({
     defaults: { duration: 0, ease: "power1.out" }
 });
@@ -15,22 +29,8 @@ tl.to(".animation", {
     duration: 1,
     delay: 1,
     ease: "Expo.easeInOut"
-}),
-    tl.fromTo("main", {
-        x: "100%",
-        opacity: 0
-    }, {
-        x: "0%",
-        opacity: 1,
-        duration: 1,
-        stagger: 0.25
-    })
-gsap.config({ trialWarn: false });
-console.clear();
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
-let smoother = ScrollSmoother.create({
-    smooth: 7
-});
+})
+
 
 
 const ani4 = gsap.timeline();
@@ -44,26 +44,28 @@ gsap.to(".sec01_text h2", {
         start: "top center",
         end: "bottom top",
         markers: false,
-        end: "+=100"
+        end: "+=300"
 
     }
 
 });
 const ani5 = gsap.timeline();
-ani5.to("#pin_01 .t1", { xPercent: 1000 }, "text")
-    .to("#pin_01 .t2", { xPercent: -1000 }, "text")
+ani5.from("#pin_01 .t1", { x: innerWidth * 1 })
+    .from("#pin_01 .t2", { x: innerWidth * -1 })
 
 ScrollTrigger.create({
     animation: ani5,
     trigger: "#pin_01",
     start: "top top",
-    end: "+=3000",
+    end: "+=200",
     scrub: true,
     pin: true,
     markers: false,
     anticipatePin: 1
 });
 
+
+console.clear();
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -93,7 +95,7 @@ function fadeImage(trigger, img) {
     const fi = gsap.to(img, {
         scrollTrigger: {
             trigger: trigger,
-            markers: false,
+            markers: true,
             scrub: true,
             start: "bottom bottom",
             end: "top center"

@@ -1,5 +1,5 @@
 .animation {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   background-color: #000;
@@ -8,8 +8,12 @@
   z-index: 2;
 }
 
+.scroll {
+  overflow: hidden;
+}
+
 .animation .loading {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -131,6 +135,7 @@ h1 div {
 #section1 {
   top: 70%;
   background-color: #000;
+  overflow: hidden;
 }
 
 #section1 .parallax__item__img {
@@ -139,9 +144,8 @@ h1 div {
 
 /* option */
 #section1 .parallax__item__img {
-  position: absolute;
   width: 700px;
-  height: 700px;
+  height: 600px;
 }
 
 .sec01_text {
