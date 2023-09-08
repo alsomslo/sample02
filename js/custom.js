@@ -27,35 +27,43 @@ tl.to(".animation", {
     })
 gsap.config({ trialWarn: false });
 console.clear();
-gsap.registerPlugin(ScrollTrigger, SplitText, ScrollSmoother, ScrollToPlugin);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, ScrollToPlugin);
 let smoother = ScrollSmoother.create({
-    smooth: 2
+    smooth: 1
 });
 
-let split = new SplitText(".text>h2", { type: "lines" });
-let masks;
-function makeItHappen() {
-    masks = [];
-    split.lines.forEach((target) => {
-        let mask = document.createElement("span");
-        mask.className = "mask";
-        target.append(mask);
-        masks.push(mask);
-        gsap.to(mask, {
-            scaleX: 0,
-            transformOrigin: "right center",
-            ease: "none",
-            scrollTrigger: {
-                trigger: target,
-                markers: false,
-                scrub: true,
-                start: "top center",
-                end: "bottom center"
-            }
 
-        });
-    });
-}
+const ani4 = gsap.timeline();
+gsap.registerPlugin(ScrollTrigger);
+gsap.to(".sec01_text h2", {
+    backgroundPositionX: "0%",
+    stagger: 30,
+    scrollTrigger: {
+        trigger: ".sec01_text h2",
+        scrub: 1,
+        start: "top center",
+        end: "bottom top",
+        markers: false,
+        end: "+=100"
+
+    }
+
+});
+const ani5 = gsap.timeline();
+ani5.to("#pin_01 .t1", { xPercent: 1000 }, "text")
+    .to("#pin_01 .t2", { xPercent: -1000 }, "text")
+
+ScrollTrigger.create({
+    animation: ani5,
+    trigger: "#pin_01",
+    start: "top top",
+    end: "+=3000",
+    scrub: true,
+    pin: true,
+    markers: false,
+    anticipatePin: 1
+});
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -111,17 +119,18 @@ function onLeave(element) {
 }
 
 
-const L = gsap.from('.sec_text', {
-    scrollTrigger: {
-        trigger: '.parallax__item__img',
-        start: 'bottom',
-        markers: false,
-        scrub: 0.75,
-        pin: true,
-    },
-    y: 0,
-    opacity: 1,
-});
+// const L = gsap.from('.sec_text', {
+//     scrollTrigger: {
+//         trigger: '.parallax__item__img',
+//         start: 'bottom',
+//         markers: false,
+//         scrub: 0.75,
+//         pin: true,
+//     },
+//     y: 0,
+//     opacity: 1,
+// });
+
 
 
 
