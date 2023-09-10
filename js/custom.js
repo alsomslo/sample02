@@ -16,11 +16,11 @@ const tl = gsap.timeline({
     defaults: { duration: 0, ease: "power1.out" }
 });
 tl.fromTo('.animation .loading', {
-    // x:"-100%",
+    // x: "-100%",
     opacity: 0,
     duration: 1.5,
 }, {
-    // x:"0%",
+    // x: "0%",
     opacity: 1,
 
 })
@@ -33,22 +33,53 @@ tl.to(".animation", {
 
 
 
-const ani4 = gsap.timeline();
-gsap.registerPlugin(ScrollTrigger);
-gsap.to(".sec01_text h2", {
-    backgroundPositionX: "0%",
-    stagger: 30,
-    scrollTrigger: {
-        trigger: ".sec01_text h2",
-        scrub: 1,
-        start: "top center",
-        end: "bottom top",
-        markers: false,
-        end: "+=300"
+// const ani4 = gsap.timeline();
+// gsap.registerPlugin(ScrollTrigger);
+// gsap.to(".sec01_text h2", {
+//     backgroundPositionX: "0%",
+//     stagger: 30,
+//     scrollTrigger: {
+//         trigger: ".sec01_text h2",
+//         scrub: 1,
+//         start: "top center",
+//         end: "bottom top",
+//         markers: false,
+//         end: "+=300"
 
-    }
+//     }
 
+// });
+$('.has-mask-fill').each(function () {
+    var words = $(this).text();
+    var total = words;
+    $(this).empty();
+    $(this).append($("<span /> ").text(words));
 });
+
+var hasMaskFill = gsap.utils.toArray('.has-mask-fill');
+hasMaskFill.forEach(function (hMaskFill) {
+    var spanFillMask = hMaskFill.querySelectorAll("span");
+    gsap.to(spanFillMask, {
+        scrollTrigger: {
+            trigger: ".has-mask-fill",
+            start: "top 90%",
+            end: () => `+=${hMaskFill.offsetHeight * 2}`,
+            scrub: 1,
+        },
+        duration: 1,
+        backgroundSize: "200% 100%",
+        stagger: 0.5,
+        ease: Linear.easeNone,
+    });
+});
+
+
+
+
+
+
+
+
 const ani5 = gsap.timeline();
 ani5.from("#pin_01 .t1", { x: innerWidth * 1 })
     .from("#pin_01 .t2", { x: innerWidth * -1 })
@@ -121,17 +152,6 @@ function onLeave(element) {
 }
 
 
-// const L = gsap.from('.sec_text', {
-//     scrollTrigger: {
-//         trigger: '.parallax__item__img',
-//         start: 'bottom',
-//         markers: false,
-//         scrub: 0.75,
-//         pin: true,
-//     },
-//     y: 0,
-//     opacity: 1,
-// });
 
 
 
@@ -143,15 +163,3 @@ function onLeave(element) {
 
 
 
-window.addEventListener("resize", newTriggers);
-
-function newTriggers() {
-    ScrollTrigger.getAll().forEach((trigger, i) => {
-        trigger.kill();
-        masks[i].remove();
-    });
-    split.split();
-    makeItHappen();
-}
-
-makeItHappen();

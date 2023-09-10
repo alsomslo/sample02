@@ -14,7 +14,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
 
-
+    <!-- <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js?r=5426"></script> -->
+    
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/Flip.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/5.0.0/imagesloaded.pkgd.min.js'></script> -->
@@ -56,9 +57,9 @@
 
                 </div>
                 <div class="sec01_text parallax__item">
-                    <h2>Macaroon croissant pastry shortbread cupcake chupa chups pudding. Gummies pie candy
-                        canes sweet
-                        roll
+                    <h2 class="has-mask-fill">Macaroon croissant pastry shortbread cupcake chupa chups pudding. Gummies
+                        pie candycanes
+                        sweetroll
                     </h2>
                 </div>
 
@@ -195,7 +196,7 @@
     <script>
         const section1 = gsap.timeline();
         section1.to("#section1 .parallax__item__img", { scale: 2.5 })
-            .to("#section1 .parallax__item__img", { autoAlpha: 0.5 })
+            .to("#section1 .parallax__item__img", { autoAlpha: 0.1 })
 
         ScrollTrigger.create({
             animation: section1,
