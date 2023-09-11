@@ -12,24 +12,7 @@ function raf(time) {
 requestAnimationFrame(raf);
 
 
-const tl = gsap.timeline({
-    defaults: { duration: 0, ease: "power1.out" }
-});
-tl.fromTo('.animation .loading', {
-    // x: "-100%",
-    opacity: 0,
-    duration: 1.5,
-}, {
-    // x: "0%",
-    opacity: 1,
 
-})
-tl.to(".animation", {
-    y: "-100%",
-    duration: 1,
-    delay: 1,
-    ease: "Expo.easeInOut"
-})
 
 
 
@@ -96,7 +79,7 @@ ScrollTrigger.create({
 });
 
 
-console.clear();
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -104,6 +87,122 @@ const SLIDE_CONTAINER = ".slide-container";
 const SLIDE = ".slide";
 const SLIDES = gsap.utils.toArray(SLIDE);
 const FIGURE = ".figure";
+
+const additionalY = { val: 0 };
+let additionalYAnim;
+let offset = 0;
+const cols = gsap.utils.toArray(".col");
+
+cols.forEach((col, i) => {
+    const images = col.childNodes;
+
+    // DUPLICATE IMAGES FOR LOOP
+    images.forEach((image) => {
+        var clone = image.cloneNode(true);
+        col.appendChild(clone);
+    });
+
+    // SET ANIMATION
+    images.forEach((item) => {
+        let columnHeight = item.parentElement.clientHeight;
+        let direction = i % 2 !== 0 ? "+=" : "-="; // Change direction for odd columns
+
+        gsap.to(item, {
+            y: direction + Number(columnHeight / 2),
+            duration: 20,
+            repeat: -1,
+            ease: "none",
+            modifiers: {
+                y: gsap.utils.unitize((y) => {
+                    if (direction == "+=") {
+                        offset += additionalY.val;
+                        y = (parseFloat(y) - offset) % (columnHeight * 0.5);
+                    } else {
+                        offset += additionalY.val;
+                        y = (parseFloat(y) + offset) % -Number(columnHeight * 0.5);
+                    }
+
+                    return y;
+                })
+            }
+        });
+    });
+});
+
+const imagesScrollerTrigger = ScrollTrigger.create({
+    trigger: "section",
+    start: "top 50%",
+    end: "bottom 50%",
+    onUpdate: function (self) {
+        const velocity = self.getVelocity();
+        if (velocity > 0) {
+            if (additionalYAnim) additionalYAnim.kill();
+            additionalY.val = -velocity / 2000;
+            additionalYAnim = gsap.to(additionalY, { val: 0 });
+        }
+        if (velocity < 0) {
+            if (additionalYAnim) additionalYAnim.kill();
+            additionalY.val = -velocity / 3000;
+            additionalYAnim = gsap.to(additionalY, { val: 0 });
+        }
+    }
+});
+
+
+
+// const quoteText = document.querySelectorAll('.quote p');
+
+
+
+
+// gsap.set(quoteText, { autoAlpha: 0 });
+// gsap.to('.overlay', {
+//     duration: 2,
+//     scale: 90,
+//     autoAlpha: 0,
+//     ease: 'power2.in',
+//     scrollTrigger: {
+//         trigger: '#section2',
+//         start: 'top top',
+//         end: '+=2000',
+//         anticipatePin: true,
+//         pin: true,
+//         scrub: true,
+//     }
+// });
+// gsap.fromTo(quoteText, { autoAlpha: 0 },
+//     {
+//         duration: 3,
+//         autoAlpha: 1,
+//         stagger: {
+//             amount: 1
+//         },
+//         ease: 'expo.inOut',
+//         scrollTrigger: {
+//             trigger: '.quote',
+//             start: 'bottom top',
+//             end: '+=1500',
+//             scrub: true,
+//         }
+//     });
+
+
+/* Copyright (c) 2020 by Craig Roblewsky (https://codepen.io/PointC/pen/KRWgOK) for code used below */
+//const svg = document.querySelector("#overlay");
+const ratio = 0.5625;
+
+function newSize() {
+    let w = window.innerWidth;
+    let h = window.innerHeight;
+    if (w > h * (16 / 9)) {
+        gsap.set("#pin-overlay", { attr: { width: w, height: w * ratio } });
+    } else {
+        gsap.set("#pin-overlay", { attr: { width: h / ratio, height: h } });
+    }
+    //let data = svg.getBoundingClientRect();
+    //gsap.set("#overlay", {x:w/2 - data.width/2});
+    //gsap.set("#overlay", {y:h/2 - data.height/2});
+}
 
 SLIDES.forEach((slide, i) => {
     const img = slide.querySelector(".figure");
@@ -150,6 +249,15 @@ function onLeave(element) {
         duration: 0.5
     });
 }
+
+
+
+
+
+
+
+// newSize();
+// window.addEventListener("resize", newSize);
 
 
 
